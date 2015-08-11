@@ -1,7 +1,7 @@
 import os
 import re
 import itertools
-from logging import getLogger
+import logging as log
 from django.conf import settings
 from django.db import transaction
 from django.http import *
@@ -17,8 +17,6 @@ from ..pypi_packages.models import Release
 from ..pypi_packages.models import Distribution
 from .basic_auth import basic_auth
 
-log = getLogger(__name__)
-
 class BadRequest(Exception):
     pass
 
@@ -26,7 +24,6 @@ class Forbidden(Exception):
     pass
 
 @basic_auth
-@transaction.commit_manually
 def register_or_upload(request):
     try:
         _verify_post_request(request)
