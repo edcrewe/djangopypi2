@@ -2,7 +2,7 @@ import errno
 import os
 import sys
 import urlparse
-from . import user_settings
+from djangopypi2.website import user_settings
 
 def ensure_directory(path):
     try:
@@ -123,7 +123,7 @@ INSTALLED_APPS = (
     'djangopypi2.apps.pypi_manage',
     'djangopypi2.apps.pypi_metadata',
     'djangopypi2.apps.pypi_packages',
-    'djangopypi2.apps.pypi_frontend',
+    'djangopypi2.apps.pypi_frontend'
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
