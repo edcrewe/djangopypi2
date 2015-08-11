@@ -14,7 +14,7 @@
     {% for user in users %}
     <tr>
       <td>
-        <a href="{{ user.get_absolute_url }}">{{ user.username }}</a>
+        <a href="/users/{{ user.username }}">{{ user.username }}</a>
       </td>
       <td>{{ user.packages_owned.count }}</td>
       <td>{{ user.date_joined|timesince }}</td>
